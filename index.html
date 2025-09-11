@@ -1,345 +1,689 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DGS Consulting</title>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="assets/logo-mark.png.png" />
-    <link rel="icon" type="image/x-icon" href="assets/logo-mark.png.png" />
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DGS Consulting - Transform Your SMB Operations</title>
     <style>
-      body { font-family: 'Inter', sans-serif; }
-      
-      /* Custom gradient that complements your teal-blue theme */
-      .hero-gradient {
-        background: linear-gradient(135deg, #9CAF88 0%, #6B8E5A 50%,  #4A5D23 100%);
-      }
-      
-      .scale-gradient {
-        background: linear-gradient(135deg, #9CAF88 0%, #6B8E5A 50%,  #4A5D23 100%);
-      }
-      
-      /* Enhanced card hover effects */
-      .tool-card {
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      
-      .tool-card:hover {
-        transform: translateY(-4px) scale(1.02);
-        box-shadow: 0 20px 40px rgba(20, 184, 166, 0.15);
-      }
-      
-      /* Smooth scroll behavior */
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      /* Logo glow effect */
-      .logo-glow {
-        filter: drop-shadow(0 0 8px rgba(20, 184, 166, 0.3));
-      }
-      
-      /* CTA button animations */
-      .cta-button {
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
-      
-      .cta-button:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(156,175,136,0.3), transparent);
-        transition: left 0.5s;
-      }
-      
-      .cta-button:hover:before {
-        left: 100%;
-      }
-      
-      .cta-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-      }
-
-      /* Custom colors */
-      .forest { background-color: #6B8E5A; }
-      .olive { background-color: #4A5D23; }
-    </style>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              'brand-teal': '#14b8a6',
-              'brand-blue': '#0891b2',
-              'brand-navy': '#1e40af',
-            }
-          }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-      }
-    </script>
-  </head>
-  <body class="bg-gray-50 text-gray-800">
-    <!-- Navbar -->
-    <header class="bg-white shadow-lg sticky top-0 z-50 backdrop-blur-sm bg-white/95">
-      <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <div class="flex items-center space-x-3">
-          <img src="asset/logo-full.png.png" alt="DGS Consulting Logo" class="h-10 logo-glow" />
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50px, -50px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #fff, #e0e7ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-content .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .results-banner {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px auto 0;
+            max-width: 800px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            text-align: center;
+        }
+        
+        .result-item h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+        
+        .result-item p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(238, 90, 36, 0.4);
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+        
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: #1a1a1a;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-links a:hover {
+            color: #667eea;
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Framework Section */
+        .framework-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .framework-card {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(102, 126, 234, 0.1);
+        }
+        
+        .framework-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .framework-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .framework-card h3 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .framework-card p {
+            color: #666;
+            line-height: 1.7;
+        }
+        
+        /* Tools Section */
+        .tools-section {
+            background: linear-gradient(135deg, #f8f9ff 0%, #e8edff 100%);
+        }
+        
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .tool-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .tool-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+        }
+        
+        .tool-header {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 30px;
+        }
+        
+        .tool-header h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .tool-header p {
+            opacity: 0.9;
+            font-size: 0.95rem;
+        }
+        
+        .tool-body {
+            padding: 30px;
+        }
+        
+        .tool-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .tool-features li {
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #666;
+        }
+        
+        .tool-features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #10b981;
+            font-weight: 700;
+        }
+        
+        .tool-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .tool-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Case Study Section */
+        .case-study-section {
+            background: #1a1a1a;
+            color: white;
+        }
+        
+        .case-study-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .case-study-text h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #667eea;
+        }
+        
+        .case-study-metrics {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .metric {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+        }
+        
+        .metric h4 {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .metric p {
+            opacity: 0.8;
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: grid;
+            gap: 20px;
+        }
+        
+        .form-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            padding: 15px 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-form textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(238, 90, 36, 0.3);
+        }
+        
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(238, 90, 36, 0.4);
+        }
+        
+        /* Footer */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+            
+            .case-study-content {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            
+            .results-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero-content">
+                <h1>Break Through Your Operational Ceiling</h1>
+                <p class="subtitle">I help SMBs achieve 150%+ revenue growth by transforming operations with mobile-first technology and proven frameworks</p>
+                
+                <div class="results-banner">
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <h3>167%</h3>
+                            <p>Revenue Growth</p>
+                        </div>
+                        <div class="result-item">
+                            <h3>50%</h3>
+                            <p>AR Reduction</p>
+                        </div>
+                        <div class="result-item">
+                            <h3>20%</h3>
+                            <p>Cost Savings</p>
+                        </div>
+                        <div class="result-item">
+                            <h3>350%</h3>
+                            <p>Referral Increase</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="#contact" class="cta-button">Transform Your Business</a>
+            </div>
         </div>
-        <nav class="hidden md:flex space-x-8 font-semibold">
-          <a href="#tools" class="hover:text-green-600 transition-colors duration-300">Tools</a>
-          <a href="#why" class="hover:text-green-600 transition-colors duration-300">Why DGS</a>
-          <a href="#about" class="hover:text-green-600 transition-colors duration-300">About</a>
-          <a href="#contact" class="hover:text-green-600 transition-colors duration-300">Contact</a>
-        </nav>
-      </div>
     </header>
 
-    <!-- Hero -->
-    <section class="hero-gradient text-white py-24 text-center relative overflow-hidden">
-      <div class="absolute inset-0 bg-black/10"></div>
-      <div class="relative z-10">
-        <img src="asset/logo-full.png.png" alt="DGS Consulting" class="mx-auto mb-8 h-28 logo-glow">
-        <h1 class="text-5xl md:text-6xl font-bold mb-6 leading-tight">Streamline Today, Scale Tomorrow</h1>
-        <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-95">Tools and frameworks to help solopreneurs and small teams grow smarter</p>
-        <a href="#tools" class="cta-button inline-block px-8 py-4 bg-white text-green-600 font-bold rounded-full shadow-xl hover:bg-gray-50">Explore Tools</a>
-      </div>
-    </section>
-
-    <!-- Tools Section -->
-    <section id="tools" class="py-24 max-w-7xl mx-auto px-6">
-      <h2 class="text-4xl font-bold text-center mb-16 text-gray-900">Our Tools</h2>
-
-      <!-- Productivity Tools -->
-      <div class="mb-20">
-        <h3 class="text-3xl font-semibold mb-8 text-green-700 flex items-center">
-          <div class="w-1 h-8 bg-gradient-to-b from-green-600 to-green-800 rounded-full mr-4"></div>
-          Productivity Tools
-        </h3>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="tool-card bg-white shadow-xl rounded-3xl p-8 border border-gray-100">
-            <img src="asset/logo-icon.png.png" class="h-14 mb-6" alt="Priority Matrix Builder" />
-            <h4 class="text-xl font-bold mb-3 text-gray-900">Priority Matrix Builder</h4>
-            <p class="text-gray-600 mb-4 leading-relaxed">Organize tasks by impact and effort with a mobile-friendly Eisenhower Matrix tool.</p>
-            <a href="https://dgsconsulting.github.io/priority-matrix-builder/" target="_blank" class="text-green-600 hover:text-teal-700 font-semibold hover:underline transition-colors">Try It →</a>
-          </div>
-          <div class="tool-card bg-white shadow-xl rounded-3xl p-8 border border-gray-100">
-            <img src="asset/logo-icon.png.png" class="h-14 mb-6" alt="Time Tracker" />
-            <h4 class="text-xl font-bold mb-3 text-gray-900">Time Tracker PWA</h4>
-            <p class="text-gray-600 mb-4 leading-relaxed">Track your time anywhere with a progressive web app designed for simplicity.</p>
-            <a href="https://dgsconsulting.github.io/-Time-Tracker-Progressive-Web-App/" target="_blank" class="text-green-600 hover:text-teal-700 font-semibold hover:underline transition-colors">Try It →</a>
-          </div>
-          <div class="tool-card bg-white shadow-xl rounded-3xl p-8 border border-gray-100">
-            <img src="asset/logo-icon.png.png" class="h-14 mb-6" alt="CRM System" />
-            <h4 class="text-xl font-bold mb-3 text-gray-900">CRM System</h4>
-            <p class="text-gray-600 mb-4 leading-relaxed">A lightweight CRM you can run directly in your browser for client management.</p>
-            <a href="https://dgsconsulting.github.io/CRM-System/" target="_blank" class="text-green-600 hover:text-teal-700 font-semibold hover:underline transition-colors">Try It →</a>
-          </div>
-        </div>
-      </div>
-      <!-- Financial Tools -->
-      <div class="mb-20">
-        <h3 class="text-3xl font-semibold mb-8 text-green-700 flex items-center">
-          <div class="w-1 h-8 bg-gradient-to-b from-green-600 to-green-800 rounded-full mr-4"></div>
-          Financial Tools
-        </h3>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="tool-card bg-white shadow-xl rounded-3xl p-8 border border-gray-100">
-            <img src="asset/logo-icon.png.png" class="h-14 mb-6" alt="Break-Even Analysis" />
-            <h4 class="text-xl font-bold mb-3 text-gray-900">Break-Even Analysis Calculator</h4>
-            <p class="text-gray-600 mb-4 leading-relaxed">Quickly calculate your break-even point to make smarter financial decisions.</p>
-            <a href="https://dgsconsulting.github.io/Break-Even-Analysis-Calculator/" target="_blank" class="text-green-600 hover:text-green-600 font-semibold hover:underline transition-colors">Try It →</a>
-          </div>
-          <div class="tool-card bg-white shadow-xl rounded-3xl p-8 border border-gray-100">
-            <img src="asset/logo-icon.png.png" class="h-14 mb-6" alt="Cash Flow Forecaster" />
-            <h4 class="text-xl font-bold mb-3 text-gray-900">Cash Flow Forecaster</h4>
-            <p class="text-gray-600 mb-4 leading-relaxed">Forecast your business's cash flow with this easy-to-use tool.</p>
-            <a href="https://dgsconsulting.github.io/Cash-Flow-Forecaster-tool/" target="_blank" class="text-green-600 hover:text-green-600 font-semibold hover:underline transition-colors">Try It →</a>
-          </div>
-          <div class="tool-card bg-white shadow-xl rounded-3xl p-8 border border-gray-100">
-            <img src="asset/logo-icon.png.png" class="h-14 mb-6" alt="ROI Calculator" />
-            <h4 class="text-xl font-bold mb-3 text-gray-900">ROI Calculator Suite</h4>
-            <p class="text-gray-600 mb-4 leading-relaxed">Evaluate your return on investment with this suite of calculators.</p>
-            <a href="https://dgsconsulting.github.io/ROI-Calculator-Suite/" target="_blank" class="text-green-600 hover:text-green-600 font-semibold hover:underline transition-colors">Try It →</a>
-          </div>
-        </div>
-      </div>
-
-      <!-- Business Frameworks -->
-      <div>
-        <h3 class="text-3xl font-semibold mb-8 text-green-700 flex items-center">
-          <div class="w-1 h-8 bg-gradient-to-b from-green-600 to-green-800 rounded-full mr-4"></div>
-          Business Frameworks & Assessment
-        </h3>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="tool-card bg-white shadow-xl rounded-3xl p-8 border border-gray-100">
-            <img src="asset/logo-icon.png.png" class="h-14 mb-6" alt="SCALE Framework" />
-            <h4 class="text-xl font-bold mb-3 text-gray-900">SCALE Framework</h4>
-            <p class="text-gray-600 mb-4 leading-relaxed">A framework with worksheets and checklists to streamline and scale operations.</p>
-            <a href="https://dgsconsulting.github.io/-SCALE-Framework/" target="_blank" class="text-green-600 hover:text-green-600 font-semibold hover:underline transition-colors">Try It →</a>
-          </div>
-          <div class="tool-card bg-white shadow-xl rounded-3xl p-8 border border-gray-100">
-            <img src="asset/logo-icon.png.png" class="h-14 mb-6" alt="Business Audit Framework" />
-            <h4 class="text-xl font-bold mb-3 text-gray-900">Business Audit Framework</h4>
-            <p class="text-gray-600 mb-4 leading-relaxed">Evaluate and improve operations to align with best practices and growth goals.</p>
-            <a href="https://dgsconsulting.github.io/Business-Audit-Framework-/" target="_blank" class="text-green-600 hover:text-green-600 font-semibold hover:underline transition-colors">Try It →</a>
-          </div>
-          <div class="tool-card bg-white shadow-xl rounded-3xl p-8 border border-gray-100">
-            <img src="asset/logo-icon.png.png" class="h-14 mb-6" alt="SOP Designer" />
-            <h4 class="text-xl font-bold mb-3 text-gray-900">SOP Designer</h4>
-            <p class="text-gray-600 mb-4 leading-relaxed">Create and manage Standard Operating Procedures with a simple, intuitive designer.</p>
-            <a href="https://dgsconsulting.github.io/SOP-Designer/" target="_blank" class="text-green-600 hover:text-green-600 font-semibold hover:underline transition-colors">Try It →</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Why Choose Us -->
-    
-    <section id="why" class="bg-gradient-to-r from-gray-50 to-gray-100 py-24">
-      <div class="max-w-7xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-16 text-gray-900">Why Choose DGS?</h2>
-        <div class="grid md:grid-cols-3 gap-12">
-           <section id="why" class="bg-gradient-to-r from-gray-50 to-gray-100 py-24">
-      <div class="max-w-7xl mx-auto px-6 text-center">
-        <h2 class="text-4xl font-bold mb-16 text-gray-900">Why Choose DGS?</h2>
-        <div class="grid md:grid-cols-3 gap-12">
-          <div class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="w-16 h-16 bg-gradient-to-b from-green-600 to-green-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-              </svg>
+    <nav>
+        <div class="container">
+            <div class="nav-content">
+                <div class="logo">
+                    <div style="display: flex; align-items: center; gap: 10px;">
+                        <div style="width: 40px; height: 40px; background: linear-gradient(45deg, #6B8E5A, #4A5D23); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <div style="color: white; font-size: 12px; font-weight: bold;">DGS</div>
+                        </div>
+                        <div>
+                            <h3 style="margin: 0; color: #4A5D23;">DGS Consulting</h3>
+                            <p style="margin: 0; font-size: 0.8rem; color: #6B8E5A; font-style: italic;">Streamline Today. Scale Tomorrow</p>
+                        </div>
+                    </div>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#framework">SCALE Framework</a></li>
+                    <li><a href="#tools">Tools</a></li>
+                    <li><a href="#case-study">Case Study</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-            <h3 class="text-2xl font-bold mb-4 text-gray-900">Free & Open Source</h3>
-            <p class="text-gray-600 text-lg">All our tools are free to use and licensed under MIT.</p>
-          </div>
-          <div class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="w-16 h-16 bg-gradient-to-b from-green-600 to-green-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-              </svg>
+        </div>
+    </nav>
+
+    <section id="framework">
+        <div class="container">
+            <div class="section-header">
+                <h2>The SCALE Framework</h2>
+                <p>The same methodology that helped a landscaping company achieve 167% revenue growth in 24 months</p>
             </div>
-            <h3 class="text-2xl font-bold mb-4 text-gray-900">Fast & Easy Setup</h3>
-            <p class="text-gray-600 text-lg">No complicated installs — just open and start using.</p>
-          </div>
-          <div class="p-8 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
-            <div class="w-16 h-16 bg-gradient-to-b from-green-600 to-green-800 rounded-2xl flex items-center justify-center mx-auto mb-6">
-              <svg class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
-              </svg>
+            
+            <div class="framework-grid">
+                <div class="framework-card">
+                    <div class="framework-icon">S</div>
+                    <h3>Streamline Processes</h3>
+                    <p>Eliminate waste and reduce complexity through mobile-first technology. Free up 20% of your time for revenue-generating activities by automating manual processes.</p>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-icon">C</div>
+                    <h3>Customer-Centric</h3>
+                    <p>Build systems that enhance customer experience at every touchpoint. Transform satisfied customers into growth engines through professional processes and transparent communication.</p>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-icon">A</div>
+                    <h3>Adapt & Innovate</h3>
+                    <p>Stay ahead in dynamic markets by continuously evolving. Implement innovation pipelines that keep you competitive while maintaining operational excellence.</p>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-icon">L</div>
+                    <h3>Leverage Data</h3>
+                    <p>Make informed decisions with real-time visibility into operations. Replace gut instinct with data-driven insights that consistently outperform intuition.</p>
+                </div>
+                
+                <div class="framework-card">
+                    <div class="framework-icon">E</div>
+                    <h3>Empower Team</h3>
+                    <p>Unlock human potential through engaged, skilled, and autonomous teams. Create systems that allow you to scale without sacrificing quality or increasing your workload.</p>
+                </div>
             </div>
-            <h3 class="text-2xl font-bold mb-4 text-gray-900">Mobile Responsive</h3>
-            <p class="text-gray-600 text-lg">Our tools are designed to work across all devices.</p>
-          </div>
         </div>
-      </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24 max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-4xl font-bold mb-8 text-gray-900">About DGS Consulting</h2>
-      <p class="text-gray-600 text-xl leading-relaxed">
-        At DGS Consulting, we believe solopreneurs and small teams deserve access to powerful, practical tools without the enterprise price tag. Our mission is to help you streamline today so you can scale tomorrow.
-      </p>
+    <section id="tools" class="tools-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Professional Tools</h2>
+                <p>The same tools I use with my $1M+ clients, available free to the community</p>
+            </div>
+            
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3>SCALE Framework Assessment</h3>
+                        <p>Comprehensive operational analysis tool</p>
+                    </div>
+                    <div class="tool-body">
+                        <ul class="tool-features">
+                            <li>Complete business operations audit</li>
+                            <li>Identify growth bottlenecks</li>
+                            <li>Prioritized improvement roadmap</li>
+                            <li>ROI projections for each area</li>
+                        </ul>
+                        <a href="https://dgsconsulting.github.io/-SCALE-Framework/" class="tool-link" target="_blank">Access Framework</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3>ROI Analysis Suite</h3>
+                        <p>Professional investment analysis tools</p>
+                    </div>
+                    <div class="tool-body">
+                        <ul class="tool-features">
+                            <li>Business investment calculations</li>
+                            <li>Marketing campaign ROI</li>
+                            <li>Process improvement valuations</li>
+                            <li>Technology implementation costs</li>
+                        </ul>
+                        <a href="#" class="tool-link">Calculate ROI</a>
+                    </div>
+                </div>
+                
+                <div class="tool-card">
+                    <div class="tool-header">
+                        <h3>Cash Flow Forecasting</h3>
+                        <p>24-month financial planning tool</p>
+                    </div>
+                    <div class="tool-body">
+                        <ul class="tool-features">
+                            <li>Revenue and expense projections</li>
+                            <li>Seasonal adjustment factors</li>
+                            <li>Cash flow gap identification</li>
+                            <li>Growth scenario modeling</li>
+                        </ul>
+                        <a href="#" class="tool-link">Plan Cash Flow</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Call to Action -->
-    <section class="scale-gradient text-white py-20 text-center relative overflow-hidden">
-      <div class="absolute inset-0 bg-black/10"></div>
-      <div class="relative z-10">
-        <h2 class="text-4xl md:text-5xl font-bold mb-6">Ready to Scale Smarter?</h2>
-        <p class="text-xl mb-8 opacity-95 max-w-2xl mx-auto">Take your business to the next level with our comprehensive suite of tools and frameworks.</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <a href="https://dgsconsulting.github.io/-SCALE-Framework/" target="_blank" class="cta-button px-8 py-4 bg-white  text-green-700 font-bold rounded-full shadow-xl hover:bg-gray-50">
-            Start with SCALE Framework
-          </a>
-          <a href="mailto:DGSConsult@consultant.com" target="_blank" class="cta-button px-8 py-4 bg-transparent border-2 border-white text-white font-bold rounded-full hover:bg-white hover:text-blue-700">
-            Questions
-          </a>
+    <section id="case-study" class="case-study-section">
+        <div class="container">
+            <div class="case-study-content">
+                <div class="case-study-text">
+                    <h3>Real Results: Landscaping Company Transformation</h3>
+                    <p>A growing landscaping company faced the operational ceiling that kills growth - cash flow struggles, cost overruns, and owner burnout. Using the SCALE Framework, we implemented a mobile-first digital infrastructure that transformed their operations.</p>
+                    
+                    <p><strong>The Solution:</strong> Mobile apps for real-time material tracking, integrated payment processing, professional documentation systems, and data-driven decision making.</p>
+                    
+                    <p><strong>The Impact:</strong> Complete business transformation in 24 months, with the owner evolving from hands-on operator to strategic leader.</p>
+                    
+                    <a href="#contact" class="cta-button">Get Similar Results</a>
+                </div>
+                
+                <div class="case-study-metrics">
+                    <div class="metric">
+                        <h4>$1.5M → $4.0M</h4>
+                        <p>Revenue Growth</p>
+                    </div>
+                    <div class="metric">
+                        <h4>50%</h4>
+                        <p>Faster Collections</p>
+                    </div>
+                    <div class="metric">
+                        <h4>20%</h4>
+                        <p>Cost Reduction</p>
+                    </div>
+                    <div class="metric">
+                        <h4>350%</h4>
+                        <p>More Referrals</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <!-- Contact Form Section -->
-    <section class="bg-white py-16" id="contact">
-      <div class="max-w-3xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold text-gray-900 mb-6">Get in Touch</h2>
-        <p class="text-gray-600 mb-10">Have a question or want to work together? Fill out the form below.</p>
-
-        <form
-          action="https://formspree.io/f/mpwjbkek"
-          method="POST"
-          class="bg-gray-50 p-8 rounded-2xl shadow-md text-left space-y-6"
-        >
-          <!-- Email -->
-          <div>
-            <label for="email" class="block text-gray-700 font-semibold mb-2">Your Email</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              required
-              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-forest focus:border-forest"
-            />
-          </div>
-
-          <!-- Message -->
-          <div>
-            <label for="message" class="block text-gray-700 font-semibold mb-2">Your Message</label>
-            <textarea
-              name="message"
-              id="message"
-              rows="5"
-              required
-              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-forest focus:border-forest"
-            ></textarea>
-          </div>
-
-          <!-- Submit Button -->
-          <button
-            type="submit"
-            class="w-full bg-forest text-white font-semibold py-3 px-6 rounded-xl hover:bg-olive transition"
-          >
-            Send Message
-          </button>
-        </form>
-      </div>
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Ready to Transform Your Business?</h2>
+                <p>Schedule a free 30-minute operational assessment to identify your biggest growth opportunities</p>
+            </div>
+            
+            <form class="contact-form" action="#" method="POST">
+                <div class="form-group">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="company" placeholder="Company Name" required>
+                    <input type="text" name="revenue" placeholder="Annual Revenue Range" required>
+                </div>
+                <textarea name="challenge" placeholder="What's your biggest operational challenge?" required></textarea>
+                <button type="submit" class="submit-btn">Get Free Assessment</button>
+            </form>
+        </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-gray-300 py-12">
-      <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
-        <div>
-          <img src="asset/logo-mark.png.png" alt="DGS Logo" class="h-12 mb-6">
-          <p class="text-sm">&copy; 2025 DGS Consulting. All rights reserved.</p>
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DGS Consulting. Transforming SMB operations for sustainable growth.</p>
         </div>
-        <div>
-          <h4 class="font-semibold mb-4 text-white">Quick Links</h4>
-          <ul class="space-y-3">
-            <li><a href="#tools" class="hover:text-green-700 transition-colors">Tools</a></li>
-            <li><a href="#why" class="hover:text-green-700 transition-colors">Why DGS</a></li>
-            <li><a href="#about" class="hover:text-green-700 transition-colors">About</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="font-semibold mb-4 text-white">Connect</h4>
-          <ul class="space-y-3">
-            <li><a href="mailto:DGSConsult@consultant.com" class="hover:text-teal-400 transition-colors">Email Us</a></li>
-            <li><a href="https://www.linkedin.com/company/dgs-consutling" target="_blank" class="hover:text-teal-400 transition-colors">LinkedIn</a></li>
-            <li><a href="https://www.instagram.com/dgsconsult/" target="_blank" class="hover:text-teal-400 transition-colors">Instagram</a></li>
-          </ul>
-        </div>
-      </div>
     </footer>
-  </body>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handler
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your interest! I\'ll contact you within 24 hours to schedule your free assessment.');
+        });
+
+        // Add scroll effect to navigation
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+            } else {
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+            }
+        });
+    </script>
+</body>
 </html>
