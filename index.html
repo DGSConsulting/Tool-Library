@@ -557,33 +557,33 @@
                 
                 <div class="tool-card">
                     <div class="tool-header">
-                        <h3>ROI Analysis Suite</h3>
-                        <p>Professional investment analysis tools</p>
+                        <h3>SOP Designer</h3>
+                        <p>Professional process documentation system</p>
                     </div>
                     <div class="tool-body">
                         <ul class="tool-features">
-                            <li>Business investment calculations</li>
-                            <li>Marketing campaign ROI</li>
-                            <li>Process improvement valuations</li>
-                            <li>Technology implementation costs</li>
+                            <li>Create standardized operating procedures</li>
+                            <li>Step-by-step process documentation</li>
+                            <li>Professional formatting and templates</li>
+                            <li>Quality control and consistency tools</li>
                         </ul>
-                        <a href="#" class="tool-link">Calculate ROI</a>
+                        <a href="https://dgsconsulting.github.io/SOP-Designer/" class="tool-link" target="_blank">Build SOPs</a>
                     </div>
                 </div>
                 
                 <div class="tool-card">
                     <div class="tool-header">
-                        <h3>Cash Flow Forecasting</h3>
-                        <p>24-month financial planning tool</p>
+                        <h3>ROI Calculator Suite</h3>
+                        <p>Comprehensive investment analysis tools</p>
                     </div>
                     <div class="tool-body">
                         <ul class="tool-features">
-                            <li>Revenue and expense projections</li>
-                            <li>Seasonal adjustment factors</li>
-                            <li>Cash flow gap identification</li>
-                            <li>Growth scenario modeling</li>
+                            <li>Business investment ROI calculations</li>
+                            <li>Marketing campaign analysis</li>
+                            <li>Strategic decision financial modeling</li>
+                            <li>Multi-scenario planning tools</li>
                         </ul>
-                        <a href="#" class="tool-link">Plan Cash Flow</a>
+                        <a href="https://dgsconsulting.github.io/ROI-Calculator-Suite/" class="tool-link" target="_blank">Calculate ROI</a>
                     </div>
                 </div>
             </div>
@@ -669,10 +669,13 @@
             });
         });
 
-        // Form submission handler
+        // Form submission handler - now handled by Formspree
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your interest! I\'ll contact you within 24 hours to schedule your free assessment.');
+            // Let Formspree handle the submission
+            // Show immediate feedback while form processes
+            const submitBtn = this.querySelector('.submit-btn');
+            submitBtn.textContent = 'Sending...';
+            submitBtn.disabled = true;
         });
 
         // Add scroll effect to navigation
