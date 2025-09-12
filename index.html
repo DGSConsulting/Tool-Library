@@ -33,7 +33,7 @@
             overflow: hidden;
         }
         
-        header::before {
+       header::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -44,9 +44,33 @@
             animation: float 20s infinite linear;
         }
         
-        @keyframes float {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(-50px, -50px); }
+        .hero-background-logo {
+            position: absolute;
+            top: 50%;
+            right: -5%;
+            width: 500px;
+            height: 500px;
+            transform: translateY(-50%);
+            opacity: 0.15;
+            z-index: 1;
+            animation: slowRotate 120s infinite linear;
+        }
+        
+        .hero-background-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(2) contrast(0.8);
+        }
+        
+        header::after {
+            display: none;
+        }
+        
+        @keyframes slowRotate {
+            0% { transform: translateY(-50%) rotate(0deg); }
+            100% { transform: translateY(-50%) rotate(360deg); }
+        }
         }
         
         .hero-content {
