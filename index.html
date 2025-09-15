@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DGS Consulting - Transform Your SMB Operations</title>
+    <title>DGS Consulting - Field Service Digital Transformation</title>
     <style>
         * {
             margin: 0;
@@ -11,188 +11,10 @@
             box-sizing: border-box;
         }
         
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.6;
-            color: #1a1a1a;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #9CAF88 0%, #6B8E5A 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: visible;
-        }
-        
-
-        
-        .hero-background-logo {
-            position: absolute;
-            top: 50%;
-            right: -10%;
-            width: 600px;
-            height: 600px;
-            transform: translateY(-50%);
-            opacity: 0.35;
-            z-index: 1;
-            animation: slowRotate 120s infinite linear;
-            pointer-events: none;
-        }
-        
-        .hero-background-logo img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            filter: brightness(1.8) contrast(0.9);
-        }
-        
-        @keyframes slowRotate {
-            0% { transform: translateY(-50%) rotate(0deg); }
-            100% { transform: translateY(-50%) rotate(360deg); }
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #fff, #e0e7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .hero-content .subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .results-banner {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border-radius: 15px;
-            padding: 30px;
-            margin: 40px auto 0;
-            max-width: 800px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .results-banner-header {
-            text-align: center;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-            opacity: 0.8;
-        }
-        
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 20px;
-            text-align: center;
-        }
-        
-        .result-item h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            color: #fff;
-        }
-        
-        .result-item p {
-            font-size: 0.9rem;
-            opacity: 0.9;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(45deg, #6B8E5A, #4A5D23);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            margin-top: 30px;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(74, 93, 35, 0.3);
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(74, 93, 35, 0.4);
-        }
-        
-        /* Navigation */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        
-        .nav-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-        
-        .nav-links a {
-            text-decoration: none;
-            color: #1a1a1a;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-links a:hover {
-            color: #6B8E5A;
-        }
-        
-        /* Mobile Navigation */
-        .mobile-menu-btn {
-            display: none;
-            flex-direction: column;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-        }
-        
-        .mobile-menu-btn span {
-            width: 25px;
-            height: 3px;
-            background: #1a1a1a;
-            margin: 3px 0;
-            transition: 0.3s;
-        }
-        
-        /* Sections */
-        section {
-            padding: 80px 0;
+        /* Tools Section Styles */
+        .tools-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
         }
         
         .section-header {
@@ -203,576 +25,636 @@
         .section-header h2 {
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #6B8E5A, #4A5D23);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #2d3748;
+            margin-bottom: 15px;
         }
         
         .section-header p {
             font-size: 1.2rem;
-            color: #666;
+            color: #718096;
             max-width: 600px;
             margin: 0 auto;
         }
         
-        /* Framework Section */
-        .framework-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        
-        .framework-card {
-            background: white;
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(156, 175, 136, 0.1);
-        }
-        
-        .framework-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
-        }
-        
-        .framework-icon {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(45deg, #9CAF88, #6B8E5A);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: white;
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
-        
-        .framework-card h3 {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: #1a1a1a;
-        }
-        
-        .framework-card p {
-            color: #666;
-            line-height: 1.7;
-        }
-        
-        /* Tools Section */
-        .tools-section {
-            background: linear-gradient(135deg, #f8faf6 0%, #f0f4ec 100%);
-        }
-        
         .tools-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 30px;
+            margin-bottom: 80px;
         }
         
         .tool-card {
             background: white;
             border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            padding: 40px 30px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
             transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
         }
         
         .tool-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
         }
         
-        .tool-header {
-            background: linear-gradient(45deg, #9CAF88, #6B8E5A);
-            color: white;
-            padding: 30px;
+        .tool-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
         }
         
-        .tool-header h3 {
-            font-size: 1.3rem;
-            font-weight: 600;
-            margin-bottom: 10px;
+        .tool-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
         }
         
-        .tool-header p {
-            opacity: 0.9;
-            font-size: 0.95rem;
-        }
-        
-        .tool-body {
-            padding: 30px;
+        .tool-card p {
+            color: #718096;
+            margin-bottom: 25px;
+            line-height: 1.6;
         }
         
         .tool-features {
-            list-style: none;
-            margin-bottom: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-bottom: 30px;
         }
         
-        .tool-features li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #666;
-        }
-        
-        .tool-features li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #6B8E5A;
-            font-weight: 700;
-        }
-        
-        .tool-link {
-            display: inline-block;
-            background: linear-gradient(45deg, #6B8E5A, #4A5D23);
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            border-radius: 10px;
+        .feature {
+            font-size: 14px;
+            color: #4a5568;
             font-weight: 500;
+        }
+        
+        .tool-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
             transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
         
-        .tool-link:hover {
+        .tool-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(107, 142, 90, 0.3);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
         }
         
-        /* Case Study Section */
-        .case-study-section {
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+        .consultation-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
             color: white;
         }
         
-        .case-study-content {
+        .cta-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+        
+        .cta-content p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Form Section Styles */
+        .form-section {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+        
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .form-header h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 15px;
+        }
+        
+        .form-header p {
+            font-size: 1.1rem;
+            color: #718096;
+        }
+        
+        .assessment-form {
+            width: 100%;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            padding: 15px;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #6B8E5A;
+            box-shadow: 0 0 0 3px rgba(107, 142, 90, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        .checkbox-group {
+            margin: 30px 0;
+        }
+        
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 500;
+            color: #4a5568;
+        }
+        
+        .checkbox-label input[type="checkbox"] {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 18px 30px;
+            font-size: 18px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .btn-arrow {
+            transition: transform 0.3s ease;
+        }
+        
+        .submit-btn:hover .btn-arrow {
+            transform: translateX(5px);
+        }
+        
+        .form-disclaimer {
+            text-align: center;
+            font-size: 14px;
+            color: #718096;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .tools-section,
+            .form-section {
+                padding: 60px 0;
+            }
+            
+            .form-container {
+                padding: 40px 30px;
+            }
+            
+            .consultation-cta {
+                padding: 40px 30px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
         }
         
-        .case-study-text h3 {
-            font-size: 2rem;
+        .hero-text {
+            color: white;
+        }
+        
+        .impact-badge {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
             margin-bottom: 20px;
-            color: #9CAF88;
+            animation: pulse 2s infinite;
         }
         
-        .case-study-text p {
-            margin-bottom: 15px;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.9; }
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.1;
+        }
+        
+        .highlight {
+            background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
             opacity: 0.9;
-            line-height: 1.7;
+            max-width: 500px;
         }
         
-        .case-study-metrics {
+        .stats-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            margin-top: 40px;
+            gap: 20px;
+            margin-bottom: 40px;
         }
         
-        .metric {
-            text-align: center;
-            padding: 25px 20px;
-            background: rgba(255, 255, 255, 0.08);
+        .stat {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 20px;
             border-radius: 15px;
-            border: 1px solid rgba(156, 175, 136, 0.2);
-        }
-        
-        .metric h4 {
-            font-size: 2.5rem;
-            color: #9CAF88;
-            margin-bottom: 10px;
-        }
-        
-        .metric p {
-            opacity: 0.9;
-        }
-        
-        /* Contact Section */
-        .contact-section {
-            background: linear-gradient(135deg, #9CAF88 0%, #6B8E5A 100%);
-            color: white;
             text-align: center;
+            transition: transform 0.3s ease;
         }
         
-        .contact-section .section-header h2 {
-            color: white !important;
-            background: none;
-            -webkit-background-clip: initial;
-            -webkit-text-fill-color: white;
-            background-clip: initial;
+        .stat:hover {
+            transform: translateY(-5px);
         }
         
-        .contact-section .section-header p {
-            color: white !important;
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #a8edea;
+            display: block;
         }
         
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            display: grid;
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
         
-        .form-group {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-        }
-        
-        .contact-form input,
-        .contact-form textarea {
-            padding: 15px 20px;
-            border: none;
-            border-radius: 10px;
-            font-size: 1rem;
-            background: rgba(255, 255, 255, 0.9);
-        }
-        
-        .contact-form textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-        
-        .submit-btn {
-            background: linear-gradient(45deg, #6B8E5A, #4A5D23);
-            color: white;
+        .btn {
             padding: 15px 30px;
-            border: none;
             border-radius: 50px;
             font-weight: 600;
-            cursor: pointer;
+            text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(74, 93, 35, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
         }
         
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(74, 93, 35, 0.4);
-        }
-        
-        /* Footer */
-        footer {
-            background: #1a1a1a;
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
-            text-align: center;
-            padding: 40px 0;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
         
-        /* Responsive */
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px);
+        }
+        
+        .hero-visual {
+            position: relative;
+        }
+        
+        .phone-mockup {
+            background: #1a1a1a;
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.3);
+            transform: rotate(-5deg);
+            animation: float 6s ease-in-out infinite;
+            margin: 0 auto;
+            max-width: 300px;
+        }
+        
+        .phone-screen {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 30px 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .phone-screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .app-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .app-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        
+        .app-subtitle {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        
+        .app-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .app-stat {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 15px 10px;
+            text-align: center;
+        }
+        
+        .app-stat-number {
+            font-size: 16px;
+            font-weight: 700;
+            color: #a8edea;
+        }
+        
+        .app-stat-label {
+            font-size: 10px;
+            opacity: 0.8;
+        }
+        
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+        
+        .floating-card {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 15px;
+            font-size: 12px;
+            color: white;
+            animation: float 8s ease-in-out infinite;
+        }
+        
+        .card-1 {
+            top: 20%;
+            left: -10%;
+            animation-delay: -2s;
+        }
+        
+        .card-2 {
+            top: 60%;
+            right: -5%;
+            animation-delay: -4s;
+        }
+        
         @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-background-logo {
-                width: 400px;
-                height: 400px;
-                right: -20%;
-            }
-            
-            .case-study-content {
+            .hero-content {
                 grid-template-columns: 1fr;
+                text-align: center;
                 gap: 40px;
             }
             
-            .results-grid {
-                grid-template-columns: repeat(2, 1fr);
+            .hero h1 {
+                font-size: 2.5rem;
             }
             
-            .nav-links {
-                display: none;
+            .cta-buttons {
+                justify-content: center;
             }
             
-            .mobile-menu-btn {
-                display: flex;
-            }
-            
-            .case-study-metrics {
+            .stats-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
+            }
+            
+            .floating-card {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <div class="hero-background-logo">
-            <img src="assets/logo-icon-t.png" alt="DGS Consulting Operations Logo" />
-        </div>
+    <section class="hero">
         <div class="container">
-            <div style="text-align: center; padding-bottom: 20px;">
-                <img src="assets/logo-icon-t.png" alt="DGS Consulting Logo" style="height: 80px; margin-bottom: 20px;">
-            </div>
             <div class="hero-content">
-                <h1>Break Through Your Operational Ceiling</h1>
-                <p class="subtitle">I help SMBs achieve 150%+ revenue growth by transforming operations with mobile-first technology and proven frameworks</p>
-                
-                <div class="results-banner">
-                    <div class="results-banner-header">
-                        Proven results from our 24-month transformation program:
-                    </div>
-                    <div class="results-grid">
-                        <div class="result-item">
-                            <h3>167%</h3>
-                            <p>Revenue Growth</p>
-                        </div>
-                        <div class="result-item">
-                            <h3>50%</h3>
-                            <p>AR Reduction</p>
-                        </div>
-                        <div class="result-item">
-                            <h3>20%</h3>
-                            <p>Cost Savings</p>
-                        </div>
-                        <div class="result-item">
-                            <h3>350%</h3>
-                            <p>Referral Increase</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <a href="#contact" class="cta-button">Transform Your Business</a>
-            </div>
-        </div>
-    </header>
-
-    <nav>
-        <div class="container">
-            <div class="nav-content">
-                <div class="logo">
-                    <div style="display: flex; align-items: center; gap: 10px;">
-                        <img src="assets/logo-icon-t.png" alt="DGS Consulting Logo" style="height: 40px; width: auto;">
-                        <div>
-                            <h3 style="margin: 0; color: #1a1a1a;">DGS Consulting</h3>
-                            <p style="margin: 0; font-size: 0.8rem; color: #666; font-style: italic;">Streamline Today. Scale Tomorrow</p>
-                        </div>
-                    </div>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#framework">SCALE Framework</a></li>
-                    <li><a href="#tools">Tools</a></li>
-                    <li><a href="#case-study">Case Study</a></li>
-                    <li><a href="https://dgsconsulting.github.io/DGSConsulting/" target="_blank">Tools Library</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <button class="mobile-menu-btn">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
-
-    <section id="framework">
-        <div class="container">
-            <div class="section-header">
-                <h2>The SCALE Framework</h2>
-                <p>The same methodology that helped a landscaping company achieve 167% revenue growth in 24 months</p>
-            </div>
-            
-            <div class="framework-grid">
-                <div class="framework-card">
-                    <div class="framework-icon">S</div>
-                    <h3>Streamline Processes</h3>
-                    <p>Eliminate waste and reduce complexity through mobile-first technology. Free up 20% of your time for revenue-generating activities by automating manual processes.</p>
-                </div>
-                
-                <div class="framework-card">
-                    <div class="framework-icon">C</div>
-                    <h3>Customer-Centric</h3>
-                    <p>Build systems that enhance customer experience at every touchpoint. Transform satisfied customers into growth engines through professional processes and transparent communication.</p>
-                </div>
-                
-                <div class="framework-card">
-                    <div class="framework-icon">A</div>
-                    <h3>Adapt & Innovate</h3>
-                    <p>Stay ahead in dynamic markets by continuously evolving. Implement innovation pipelines that keep you competitive while maintaining operational excellence.</p>
-                </div>
-                
-                <div class="framework-card">
-                    <div class="framework-icon">L</div>
-                    <h3>Leverage Data</h3>
-                    <p>Make informed decisions with real-time visibility into operations. Replace gut instinct with data-driven insights that consistently outperform intuition.</p>
-                </div>
-                
-                <div class="framework-card">
-                    <div class="framework-icon">E</div>
-                    <h3>Empower Team</h3>
-                    <p>Unlock human potential through engaged, skilled, and autonomous teams. Create systems that allow you to scale without sacrificing quality or increasing your workload.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="tools" class="tools-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Professional Tools</h2>
-                <p>The same tools I use with my $1M+ clients, available free to the community</p>
-            </div>
-            
-            <div class="tools-grid">
-                <div class="tool-card">
-                    <div class="tool-header">
-                        <h3>SCALE Framework Assessment</h3>
-                        <p>Comprehensive operational analysis tool</p>
-                    </div>
-                    <div class="tool-body">
-                        <ul class="tool-features">
-                            <li>Complete business operations audit</li>
-                            <li>Identify growth bottlenecks</li>
-                            <li>Prioritized improvement roadmap</li>
-                            <li>ROI projections for each area</li>
-                        </ul>
-                        <a href="https://dgsconsulting.github.io/-SCALE-Framework/" class="tool-link" target="_blank">Access Framework</a>
-                    </div>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-header">
-                        <h3>SOP Designer</h3>
-                        <p>Professional process documentation system</p>
-                    </div>
-                    <div class="tool-body">
-                        <ul class="tool-features">
-                            <li>Create standardized operating procedures</li>
-                            <li>Step-by-step process documentation</li>
-                            <li>Professional formatting and templates</li>
-                            <li>Quality control and consistency tools</li>
-                        </ul>
-                        <a href="https://dgsconsulting.github.io/SOP-Designer/" class="tool-link" target="_blank">Build SOPs</a>
-                    </div>
-                </div>
-                
-                <div class="tool-card">
-                    <div class="tool-header">
-                        <h3>ROI Calculator Suite</h3>
-                        <p>Comprehensive investment analysis tools</p>
-                    </div>
-                    <div class="tool-body">
-                        <ul class="tool-features">
-                            <li>Business investment ROI calculations</li>
-                            <li>Marketing campaign analysis</li>
-                            <li>Strategic decision financial modeling</li>
-                            <li>Multi-scenario planning tools</li>
-                        </ul>
-                        <a href="https://dgsconsulting.github.io/ROI-Calculator-Suite/" class="tool-link" target="_blank">Calculate ROI</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="case-study" class="case-study-section">
-        <div class="container">
-            <div class="case-study-content">
-                <div class="case-study-text">
-                    <h3>Real Results: Landscaping Company Transformation</h3>
-                    <p>A growing landscaping company faced the operational ceiling that kills growth - cash flow struggles, cost overruns, and owner burnout. Using the SCALE Framework, we implemented a mobile-first digital infrastructure that transformed their operations.</p>
+                <div class="hero-text">
+                    <div class="impact-badge">✅ Proven Results: $1.5M → $4.0M in 24 Months</div>
                     
-                    <p><strong>The Solution:</strong> Mobile apps for real-time material tracking, integrated payment processing, professional documentation systems, and data-driven decision making.</p>
+                    <h1>I Help Field Service Companies <span class="highlight">Scale Operations</span> With Mobile-First Technology</h1>
                     
-                    <p><strong>The Impact:</strong> Complete business transformation in 24 months, with the owner evolving from hands-on operator to strategic leader.</p>
+                    <p>The same digital transformation strategy that grew a landscaping company 167% in two seasons. Real systems, real results, real ROI.</p>
                     
-                    <a href="#contact" class="cta-button">Get Similar Results</a>
+                    <div class="stats-grid">
+                        <div class="stat">
+                            <span class="stat-number">167%</span>
+                            <span class="stat-label">Revenue Growth</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">50%</span>
+                            <span class="stat-label">Faster Collections</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">20%</span>
+                            <span class="stat-label">Cost Reduction</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">350%</span>
+                            <span class="stat-label">More Referrals</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-buttons">
+                        <a href="#case-study" class="btn btn-primary">See The Full Case Study</a>
+                        <a href="#consultation" class="btn btn-secondary">Free Assessment</a>
+                    </div>
                 </div>
                 
-                <div class="case-study-metrics">
-                    <div class="metric">
-                        <h4>$1.5M → $4.0M</h4>
-                        <p>Revenue Growth</p>
+                <div class="hero-visual">
+                    <div class="floating-elements">
+                        <div class="floating-card card-1">
+                            💳 Real-time payments<br>
+                            ↗️ 50% faster AR
+                        </div>
+                        <div class="floating-card card-2">
+                            📱 Mobile tracking<br>
+                            ↘️ 20% cost savings
+                        </div>
                     </div>
-                    <div class="metric">
-                        <h4>50%</h4>
-                        <p>Faster Collections</p>
-                    </div>
-                    <div class="metric">
-                        <h4>20%</h4>
-                        <p>Cost Reduction</p>
-                    </div>
-                    <div class="metric">
-                        <h4>350%</h4>
-                        <p>More Referrals</p>
+                    
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="app-header">
+                                <div class="app-title">Field Operations</div>
+                                <div class="app-subtitle">Live Dashboard</div>
+                            </div>
+                            <div class="app-stats">
+                                <div class="app-stat">
+                                    <div class="app-stat-number">$47K</div>
+                                    <div class="app-stat-label">Today's Revenue</div>
+                                </div>
+                                <div class="app-stat">
+                                    <div class="app-stat-number">8</div>
+                                    <div class="app-stat-label">Active Jobs</div>
+                                </div>
+                                <div class="app-stat">
+                                    <div class="app-stat-number">94%</div>
+                                    <div class="app-stat-label">On-Time Rate</div>
+                                </div>
+                                <div class="app-stat">
+                                    <div class="app-stat-number">$12K</div>
+                                    <div class="app-stat-label">Pending Payments</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <section id="contact" class="contact-section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Ready to Transform Your Business?</h2>
-                <p>Schedule a free 30-minute operational assessment to identify your biggest growth opportunities</p>
-            </div>
-            
-            <form class="contact-form" action="https://formspree.io/f/mpwjbkek" method="POST">
-                <div class="form-group">
-                    <input type="text" name="name" placeholder="Your Name" required>
-                    <input type="email" name="email" placeholder="Email Address" required>
-                </div>
-                <div class="form-group">
-                    <input type="text" name="company" placeholder="Company Name" required>
-                    <input type="text" name="revenue" placeholder="Annual Revenue Range" required>
-                </div>
-                <textarea name="challenge" placeholder="What's your biggest operational challenge?" required></textarea>
-                <button type="submit" class="submit-btn">Get Free Assessment</button>
-            </form>
-        </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px;">
-                <img src="assets/logo-icon-t.png" alt="DGS Consulting Logo" style="height: 50px; width: auto;">
-            </div>
-            <p>&copy; 2025 DGS Consulting. Streamline Today. Scale Tomorrow</p>
-        </div>
-    </footer>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Form submission handler
-        document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            const submitBtn = this.querySelector('.submit-btn');
-            submitBtn.textContent = 'Sending...';
-            submitBtn.disabled = true;
-        });
-
-        // Fixed navigation scroll effect
-        window.addEventListener('scroll', function() {
-            const nav = document.querySelector('nav');
-            if (window.scrollY > 100) {
-                nav.style.background = 'rgba(255, 255, 255, 0.98)';
-                nav.style.backdropFilter = 'blur(15px)';
-            } else {
-                nav.style.background = 'rgba(255, 255, 255, 0.95)';
-                nav.style.backdropFilter = 'blur(10px)';
-            }
-        });
-    </script>
 </body>
 </html>
