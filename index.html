@@ -11,10 +11,7 @@
             box-sizing: border-box;
         }
         
-        body
-        
-        {
-            
+        body {
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             line-height: 1.6;
             color: #1a1a1a;
@@ -33,47 +30,34 @@
             padding: 80px 0;
             text-align: center;
             position: relative;
-            overflow: hidden;
+            overflow: visible;
         }
         
-    header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
-            animation: float 20s infinite linear;
-        }
+
         
         .hero-background-logo {
             position: absolute;
             top: 50%;
-            right: -5%;
-            width: 800px;
-            height: 800px;
+            right: -10%;
+            width: 600px;
+            height: 600px;
             transform: translateY(-50%);
-            opacity: 0.15;
+            opacity: 0.35;
             z-index: 1;
             animation: slowRotate 120s infinite linear;
+            pointer-events: none;
         }
         
         .hero-background-logo img {
             width: 100%;
             height: 100%;
             object-fit: contain;
-            filter: brightness(2) contrast(0.8);
-        }
-        
-        header::after {
-            display: none;
+            filter: brightness(1.8) contrast(0.9);
         }
         
         @keyframes slowRotate {
             0% { transform: translateY(-50%) rotate(0deg); }
             100% { transform: translateY(-50%) rotate(360deg); }
-        }
         }
         
         .hero-content {
@@ -108,9 +92,13 @@
             margin: 40px auto 0;
             max-width: 800px;
             border: 1px solid rgba(255, 255, 255, 0.3);
-            <div class="hero-background-logo">
-    <img src="assets/logo-icon-t.png" alt="DGS Consulting Operations Logo" />
-</div>
+        }
+        
+        .results-banner-header {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+            opacity: 0.8;
         }
         
         .results-grid {
@@ -159,15 +147,6 @@
             top: 0;
             z-index: 100;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            <div class="logo">
-    <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="assets/logo-icon-t.png" alt="DGS Consulting Logo" style="height: 40px; width: auto;">
-        <div>
-            <h3 style="margin: 0; color: #1a1a1a;">DGS Consulting</h3>
-            <p style="margin: 0; font-size: 0.8rem; color: #666; font-style: italic;">Streamline Today. Scale Tomorrow</p>
-        </div>
-    </div>
-</div>
         }
         
         .nav-content {
@@ -191,6 +170,24 @@
         
         .nav-links a:hover {
             color: #6B8E5A;
+        }
+        
+        /* Mobile Navigation */
+        .mobile-menu-btn {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+        }
+        
+        .mobile-menu-btn span {
+            width: 25px;
+            height: 3px;
+            background: #1a1a1a;
+            margin: 3px 0;
+            transition: 0.3s;
         }
         
         /* Sections */
@@ -351,7 +348,7 @@
         
         /* Case Study Section */
         .case-study-section {
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
             color: white;
         }
         
@@ -368,6 +365,12 @@
             color: #9CAF88;
         }
         
+        .case-study-text p {
+            margin-bottom: 15px;
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+        
         .case-study-metrics {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -377,9 +380,10 @@
         
         .metric {
             text-align: center;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.05);
+            padding: 25px 20px;
+            background: rgba(255, 255, 255, 0.08);
             border-radius: 15px;
+            border: 1px solid rgba(156, 175, 136, 0.2);
         }
         
         .metric h4 {
@@ -389,9 +393,8 @@
         }
         
         .metric p {
-            opacity: 0.8;
+            opacity: 0.9;
         }
-
         
         /* Contact Section */
         .contact-section {
@@ -470,6 +473,12 @@
                 font-size: 2.5rem;
             }
             
+            .hero-background-logo {
+                width: 400px;
+                height: 400px;
+                right: -20%;
+            }
+            
             .case-study-content {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -482,20 +491,35 @@
             .nav-links {
                 display: none;
             }
+            
+            .mobile-menu-btn {
+                display: flex;
+            }
+            
+            .case-study-metrics {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div style="text-align: center; padding-top: 40px; padding-bottom: 20px;">
-    <img src="assets/logo-icon-t.png" alt="DGS Consulting Logo" style="height: 80px; margin-bottom: 30px;">
-</div>
+        <div class="hero-background-logo">
+            <img src="assets/logo-icon-t.png" alt="DGS Consulting Operations Logo" />
+        </div>
         <div class="container">
+            <div style="text-align: center; padding-bottom: 20px;">
+                <img src="assets/logo-icon-t.png" alt="DGS Consulting Logo" style="height: 80px; margin-bottom: 20px;">
+            </div>
             <div class="hero-content">
                 <h1>Break Through Your Operational Ceiling</h1>
                 <p class="subtitle">I help SMBs achieve 150%+ revenue growth by transforming operations with mobile-first technology and proven frameworks</p>
                 
                 <div class="results-banner">
+                    <div class="results-banner-header">
+                        Proven results from our 24-month transformation program:
+                    </div>
                     <div class="results-grid">
                         <div class="result-item">
                             <h3>167%</h3>
@@ -528,8 +552,8 @@
                     <div style="display: flex; align-items: center; gap: 10px;">
                         <img src="assets/logo-icon-t.png" alt="DGS Consulting Logo" style="height: 40px; width: auto;">
                         <div>
-                            <h3 style="margin: 0; color: #FFFFFF;">DGS Consulting</h3>
-                            <p style="margin: 0; font-size: 0.8rem; color: #FFFFFF; font-style: italic;">Streamline Today. Scale Tomorrow</p>
+                            <h3 style="margin: 0; color: #1a1a1a;">DGS Consulting</h3>
+                            <p style="margin: 0; font-size: 0.8rem; color: #666; font-style: italic;">Streamline Today. Scale Tomorrow</p>
                         </div>
                     </div>
                 </div>
@@ -540,6 +564,11 @@
                     <li><a href="https://dgsconsulting.github.io/DGSConsulting/" target="_blank">Tools Library</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
+                <button class="mobile-menu-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
     </nav>
@@ -706,10 +735,8 @@
         <div class="container">
             <div style="display: flex; align-items: center; justify-content: center; gap: 15px; margin-bottom: 20px;">
                 <img src="assets/logo-icon-t.png" alt="DGS Consulting Logo" style="height: 50px; width: auto;">
-                <div style="text-align: left;">
-                </div>
             </div>
-            <p>&copy; 2025 DGS Consulting. Streamline Today. Scale Tomorrow </p>
+            <p>&copy; 2025 DGS Consulting. Streamline Today. Scale Tomorrow</p>
         </div>
     </footer>
 
@@ -728,22 +755,22 @@
             });
         });
 
-        // Form submission handler - now handled by Formspree
+        // Form submission handler
         document.querySelector('.contact-form').addEventListener('submit', function(e) {
-            // Let Formspree handle the submission
-            // Show immediate feedback while form processes
             const submitBtn = this.querySelector('.submit-btn');
             submitBtn.textContent = 'Sending...';
             submitBtn.disabled = true;
         });
 
-        // Add scroll effect to navigation
+        // Fixed navigation scroll effect
         window.addEventListener('scroll', function() {
             const nav = document.querySelector('nav');
             if (window.scrollY > 100) {
-                nav.style.background = '#7A8A4B';
+                nav.style.background = 'rgba(255, 255, 255, 0.98)';
+                nav.style.backdropFilter = 'blur(15px)';
             } else {
-                nav.style.background = '#8A9A5B';
+                nav.style.background = 'rgba(255, 255, 255, 0.95)';
+                nav.style.backdropFilter = 'blur(10px)';
             }
         });
     </script>
